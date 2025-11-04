@@ -130,3 +130,15 @@ Hello, World! Welcome to Go Web Server 🚀
 - [Official Go Docs](https://go.dev/doc/)
 - [Tour of Go](https://tour.golang.org/)
 - [Go by Example](https://gobyexample.com/)
+
+## Bonus Section
+
+## Comparison – Go vs Node.js
+
+| Feature     | Go (Golang)         | Node.js                  |
+| ----------- | ------------------- | ------------------------ |
+| Type        | Compiled            | Interpreted              |
+| Speed       | Very fast           | Moderate                 |
+| Concurrency | Built-in goroutines | Async model              |
+| Ideal Use   | APIs, DevOps tools  | Web apps, real-time apps |
+| Syntax      | Simple and clean    | JavaScript-based         |
