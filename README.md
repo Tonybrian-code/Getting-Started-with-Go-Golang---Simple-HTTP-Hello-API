@@ -109,18 +109,21 @@ a new joke each time the page refreshes
 
 ### Setup guide and download links
 **prompt:** How do I install Go on Windows?
+
 **AI’s response summary:**
 Provided step-by-step setup instructions including downloading Go, running the installer, and verifying the installation.
 **Evaluation:** Helpful
 
 ### working code example
 **prompt:** Show me how to create a simple HTTP server in Go.
+
 **AI’s response summary:**
 Provided a working code example using net/http, including a simple handler function that responds to requests.
 **Evaluation:** Very useful
 
 ### import, func main(), and http usage
 **prompt:** Explain each line like I’m a beginner.
+
 **AI’s response summary:**
 Explained import, func main(), and the usage of http.HandleFunc and http.ListenAndServe in simple terms.
 **Evaluation:** Deep understanding
