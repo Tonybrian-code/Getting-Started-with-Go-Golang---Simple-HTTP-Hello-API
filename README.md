@@ -142,3 +142,43 @@ Hello, World! Welcome to Go Web Server 🚀
 | Concurrency | Built-in goroutines | Async model              |
 | Ideal Use   | APIs, DevOps tools  | Web apps, real-time apps |
 | Syntax      | Simple and clean    | JavaScript-based         |
+
+**Insight:** Go feels cleaner and more efficient for backend services, while Node.js is easier for JavaScript developers.
+
+## Themed Hello World: Joke API
+
+### Code
+
+```
+#go
+package main
+
+import (
+    "fmt"
+    "math/rand"
+    "net/http"
+    "time"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    jokes := []string{
+        "Why do Gophers love Go? Because it makes concurrency easy!",
+        "I told my code a joke... it didn’t catch it!",
+        "Go programmers never panic… oh wait.",
+    }
+    rand.Seed(time.Now().UnixNano())
+    fmt.Fprintf(w, jokes[rand.Intn(len(jokes))])
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    fmt.Println("Joke API running at http://localhost:8080")
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+### Result
+```
+#Every page refresh shows a new joke!
+```
+
