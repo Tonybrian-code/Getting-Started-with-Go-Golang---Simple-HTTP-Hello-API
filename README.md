@@ -56,6 +56,10 @@ cd go-hello
 go mod init go-hello
 #creates: go.mod file
 ```
+### 4. Create your main file
+```
+touch main.go
+```
 
 ## 5. Minimal Working Example
 ### Example: Simple "Hello World" HTTP Server
