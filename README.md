@@ -34,14 +34,99 @@ Docker, Kubernetes, and Terraform — all major DevOps tools — are written in 
 
 ##  4. Installation & Setup
 
-### 1️⃣ Install Go
+### 1. Install Go
 
 Download and install Go from the official website:  
 👉 [https://go.dev/dl/](https://go.dev/dl/)
 
-### 2️⃣ Verify Installation
+### 2. Verify Installation
 
 Open a terminal or command prompt and run:
 ```bash
 go version
-go version go1.22.0 windows/amd64
+#Expected output: go version go1.22.0 windows/amd64
+```
+
+### 3. Create Workspace
+```bash
+mkdir go-hello
+cd go-hello
+
+# Initialize your module:
+go mod init go-hello
+#creates: go.mod file
+```
+
+## 5. Minimal Working Example
+### Example: Simple "Hello World" HTTP Server
+```
+#go
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, World! Welcome to Go Web Server 🚀")
+}
+
+func main() {
+    http.HandleFunc("/", handler)
+    fmt.Println("Server starting on http://localhost:8080")
+    http.ListenAndServe(":8080", nil)
+}
+```
+
+### Run it
+```
+go run main.go
+```
+
+### Expected output
+```nginx
+Server starting on http://localhost:8080
+```
+
+### Visit: http://localhost:8080
+### You should see:
+
+Hello, World! Welcome to Go Web Server 🚀
+
+## 6. AI Prompt Journal
+
+### Setup guide and download links
+**prompt:** How do I install Go on Windows?
+
+### working code example
+**prompt:** Show me how to create a simple HTTP server in Go.
+
+### import, func main(), and http usage
+**prompt:** Explain each line like I’m a beginner.
+
+## 7. Common Issues & Fixes
+
+### Issue 1: go: command not found
+
+**Cause:** Go not added to PATH
+
+**Solution:** Add Go’s bin folder to system environment variables
+
+### Issue 2: Blank page
+
+**Cause:** Port conflict
+
+**Solution:** Add response writer line
+
+### Issue 3: Module error
+
+**Cause:** go mod not initialized
+
+**Solution:** Run go mod init go-hello
+
+## 8. References
+
+- [Official Go Docs](https://go.dev/doc/)
+- [Tour of Go](https://tour.golang.org/)
+- [Go by Example](https://gobyexample.com/)
