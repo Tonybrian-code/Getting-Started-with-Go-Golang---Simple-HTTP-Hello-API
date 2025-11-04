@@ -133,7 +133,7 @@ Hello, World! Welcome to Go Web Server 🚀
 
 ## Bonus Section
 
-## Comparison – Go vs Node.js
+## 1. Comparison – Go vs Node.js
 
 | Feature     | Go (Golang)         | Node.js                  |
 | ----------- | ------------------- | ------------------------ |
@@ -145,7 +145,7 @@ Hello, World! Welcome to Go Web Server 🚀
 
 **Insight:** Go feels cleaner and more efficient for backend services, while Node.js is easier for JavaScript developers.
 
-## Themed Hello World: Joke API
+## 2. Themed Hello World: Joke API
 
 ### Code
 
