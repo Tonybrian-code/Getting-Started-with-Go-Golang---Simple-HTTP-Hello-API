@@ -62,23 +62,30 @@ touch main.go
 ```
 
 ## 5. Minimal Working Example
-### Example: Simple "Hello World" HTTP Server
+### Themed Hello World: Joke API
 ```
-#go
 package main
 
 import (
     "fmt"
+    "math/rand"
     "net/http"
+    "time"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello, World! Welcome to Go Web Server 🚀")
+    jokes := []string{
+        "Why do Gophers love Go? Because it makes concurrency easy!",
+        "I told my code a joke... it didn’t catch it!",
+        "Go programmers never panic… oh wait.",
+    }
+    rand.Seed(time.Now().UnixNano())
+    fmt.Fprintf(w, jokes[rand.Intn(len(jokes))])
 }
 
 func main() {
     http.HandleFunc("/", handler)
-    fmt.Println("Server starting on http://localhost:8080")
+    fmt.Println("Joke API running at http://localhost:8080")
     http.ListenAndServe(":8080", nil)
 }
 ```
@@ -89,8 +96,8 @@ go run main.go
 ```
 
 ### Expected output
-```nginx
-Server starting on http://localhost:8080
+```
+#Every page refresh shows a new joke!
 ```
 
 ### Visit: http://localhost:8080
@@ -135,9 +142,7 @@ Hello, World! Welcome to Go Web Server 🚀
 - [Tour of Go](https://tour.golang.org/)
 - [Go by Example](https://gobyexample.com/)
 
-## Bonus Section
-
-## 1. Comparison – Go vs Node.js
+## Comparison – Go vs Node.js
 
 | Feature     | Go (Golang)         | Node.js                  |
 | ----------- | ------------------- | ------------------------ |
@@ -149,40 +154,6 @@ Hello, World! Welcome to Go Web Server 🚀
 
 **Insight:** Go feels cleaner and more efficient for backend services, while Node.js is easier for JavaScript developers.
 
-## 2. Themed Hello World: Joke API
 
-### Code
 
-```
-#go
-package main
-
-import (
-    "fmt"
-    "math/rand"
-    "net/http"
-    "time"
-)
-
-func handler(w http.ResponseWriter, r *http.Request) {
-    jokes := []string{
-        "Why do Gophers love Go? Because it makes concurrency easy!",
-        "I told my code a joke... it didn’t catch it!",
-        "Go programmers never panic… oh wait.",
-    }
-    rand.Seed(time.Now().UnixNano())
-    fmt.Fprintf(w, jokes[rand.Intn(len(jokes))])
-}
-
-func main() {
-    http.HandleFunc("/", handler)
-    fmt.Println("Joke API running at http://localhost:8080")
-    http.ListenAndServe(":8080", nil)
-}
-```
-
-### Result
-```
-#Every page refresh shows a new joke!
-```
 
